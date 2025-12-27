@@ -1,0 +1,9 @@
+django
+djangorestframework
+Pillow
+psycopg2-binary
+dj-database-url
+django-storages
+boto3
+python-dotenv
+whitenoise
