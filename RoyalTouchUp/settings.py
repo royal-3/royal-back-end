@@ -169,4 +169,12 @@ CORS_ALLOW_ALL_ORIGINS = True
 CSRF_TRUSTED_ORIGINS = [
     'https://*.vercel.app',
     'http://localhost:5173',
+    'https://royal-front-end.vercel.app',
+    'https://royal-back-end.vercel.app',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "https://royal-front-end.vercel.app",
+    "https://royal-back-end.vercel.app",
 ]

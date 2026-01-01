@@ -6,4 +6,5 @@ dj-database-url
 django-storages
 boto3
 python-dotenv
+django-cors-headers
 whitenoise
