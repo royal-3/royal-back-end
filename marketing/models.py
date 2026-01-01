@@ -25,10 +25,12 @@ class ConsultationRequest(models.Model):
         ('Domestic', 'Domestic'),
     ]
     CITY_CHOICES = [
-        ('New York', 'New York'), # Placeholder options
-        ('London', 'London'),
-        ('Mumbai', 'Mumbai'),
-        ('Delhi', 'Delhi'),
+        ('Kalyani', 'Kalyani'),
+        ('Kancharapara', 'Kancharapara'),
+        ('Barrackpore', 'Barrackpore'),
+        ('Naihati', 'Naihati'),
+        ('Krishnanagar', 'Krishnanagar'),
+        ('Kolkata', 'Kolkata'),
     ]
     name = models.CharField(max_length=255)
     house_type = models.CharField(max_length=20, choices=HOUSE_TYPES)
@@ -53,3 +55,23 @@ class RecentWorkImage(models.Model):
 
     def __str__(self):
         return f"Image for {self.project.title}"
+
+class HeroSection(models.Model):
+    image = models.ImageField(upload_to='hero/')
+    title = models.CharField(max_length=255, default='ROYAL TOUCHUP')
+    subtitle = models.CharField(max_length=255, default='Comfort Meets Creativity')
+    description = models.TextField(default='We design spaces that feel good and work well. Personalized interior design tailored to your taste, lifestyle, and budget.')
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return "Hero Section Config"
+
+class Review(models.Model):
+    name = models.CharField(max_length=255)
+    rating = models.IntegerField(default=5, help_text="Rating from 1 to 5")
+    comment = models.TextField()
+    is_approved = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.rating} Stars"

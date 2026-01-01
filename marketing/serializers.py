@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import GallerySection, GalleryImage, ConsultationRequest, RecentWork, RecentWorkImage
+from .models import GallerySection, GalleryImage, ConsultationRequest, RecentWork, RecentWorkImage, HeroSection, Review
 
 class GalleryImageSerializer(serializers.ModelSerializer):
     class Meta:
@@ -29,3 +29,13 @@ class RecentWorkSerializer(serializers.ModelSerializer):
     class Meta:
         model = RecentWork
         fields = ['id', 'title', 'description', 'images']
+
+class HeroSectionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HeroSection
+        fields = '__all__'
+
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Review
+        fields = '__all__'

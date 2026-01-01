@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import GallerySection, GalleryImage, ConsultationRequest, RecentWork, RecentWorkImage
+from .models import GallerySection, GalleryImage, ConsultationRequest, RecentWork, RecentWorkImage, HeroSection, Review
 
 class GalleryImageInline(admin.TabularInline):
     model = GalleryImage
@@ -18,3 +18,5 @@ class RecentWorkAdmin(admin.ModelAdmin):
 admin.site.register(GallerySection, GallerySectionAdmin)
 admin.site.register(ConsultationRequest)
 admin.site.register(RecentWork, RecentWorkAdmin)
+admin.site.register(HeroSection)
+admin.site.register(Review)
